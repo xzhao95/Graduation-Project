@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>登录</title>
-    <link rel="stylesheet" type="text/css" href="/static/js/dialog/skin/default/layer.css">
-    <script type="text/javascript" src="/static/js/jquery-3.2.0.min.js" ></script>
-    <script type="text/javascript" src="/static/js/dialog/layer.js"></script>
-    <script type="text/javascript" src="/static/js/dialog.js"></script>
-    <script type="text/javascript" src="/static/admin/login.js"></script>
-    
-</head>
-<body>
-    <div>
-       <form method="post" name="input">
-       		用户名<input type="text" name="username">
-       		密码<input type="password" name="password">
-       		<button name="login" type="button" onclick="loginObj.check()">登录</button>
-       </form>
+{__NOLAYOUT__}
+{include file="./layoutitem/header"}
+<body class="login-background">
+    <div class="login">
+      <div class="title"><h2>住院管理系统</h2></div>
+      <div class="panel">
+        <form method="post" name="input">
+            <div class="form-group">
+         	    <input type="text" name="username" class="form-control" placeholder="username">
+            </div>
+            <div class="form-group">
+         		 <input type="password" name="password" class="form-control" placeholder="password">
+            </div>
+         		<button name="login" class="btn" type="button" onclick="loginObj.check()">登录</button>
+         </form>
+       </div>
     </div>
-    
-    <script type="text/javascript">
-    </script>
     
 </body>
 </html>
