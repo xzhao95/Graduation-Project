@@ -1,0 +1,129 @@
+<div>
+	<form class="form-horizontal">
+		<!-- 病患号码 -->
+		<div class="form-inline form-group">
+			<label class="col-sm-1 control-label">病患号码</label>
+			<input type="text" name="patientid" id="patientid" class="form-control">
+			<button type="button" class="btn btn-defaule" id="getpatientmes" onclick="checkinObj.getMessage()">获取信息</button>
+		</div>
+		<!-- 基本信息 -->
+		<div >
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">姓名</label>
+					<div class="col-sm-10">
+						<input type="text" name="name" class="form-control ">
+					</div>
+				</div>
+				
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">性别</label>
+					<div class="col-sm-10"> 
+						<label class="radio-inline"><input type="radio" name="sexradio">男</label>
+						<label class="radio-inline"><input type="radio" name="sexradio">女</label>
+					</div>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">年龄</label>
+					<div class="col-sm-10">
+						<input type="text" name="age" class="form-control">
+					</div>
+				</div>
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">身份证号</label>
+					<div class="col-sm-10">
+						<input type="text" name="citizen_ID_number" class="form-control">
+					</div>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">联系电话</label>
+					<div class="col-sm-10">
+						<input type="text" name="tel" class="form-control">
+					</div>
+				</div>
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">联系住址</label>
+					<div class="col-sm-10">
+						<input type="text" name="address" class="form-control">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 联系人 -->
+		<div>
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">姓名</label>
+					<div class="col-sm-10">
+						<input type="text" name="department" class="form-control">
+					</div>
+				</div>
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">关系</label>
+					<div class="col-sm-10">
+						<input type="text" name="checkindate" class="form-control">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">电话</label>
+					<div class="col-sm-10">
+						<input type="text" name="checkindate" class="form-control">
+					</div>				
+				</div>
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">地址</label>
+					<div class="col-sm-10">
+						<input type="text" name="checkindate" class="form-control">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 入住信息 -->
+		<div>
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">科室</label>
+					<div class="col-sm-5">
+						<input type="text" name="department" class="form-control">
+					</div>
+				</div>
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">入院日期</label>
+					<div class="col-sm-5">
+						<input type="text" name="checkindate" class="form-control" id="checkintime">
+					</div>
+					<!-- <span class="add-on"><i class="icon-th"></i></span> -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">主治医生</label>
+					<div class="col-sm-8">
+						<input type="text" name="doctor" class="form-control">
+					</div>
+				</div>
+				<div class="form-group col-sm-6">
+					<label class="col-sm-2 control-label">病人病床</label>
+					<div class="col-sm-8">
+						<input type="text" name="patientbed" class="form-control">
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+	$("#checkintime").datetimepicker({
+		format: 'yyyy-mm-dd',
+		minView: 2,
+		autoclose: true
+	})
+</script>
