@@ -1,0 +1,32 @@
+<!-- 表格操作 -->
+<div class="table-toolbar" id="toolbar">
+    <div class="btn-group">
+        <button class="btn btn-default">添加</button>
+        <button class="btn btn-default">删除</button>
+    </div>
+</div>
+<table id="table"
+       data-method="post"
+       data-data-type="json"
+       data-toggle="table"
+       data-toolbar="#toolbar"
+       data-height="460"
+       data-click-to-select="true"
+       data-search="true"
+       data-search-on-enter-key="true"
+       data-show-columns="true"
+       data-show-refresh="true"
+       data-url="{:url('admin/bed/getList')}">
+    <thead>
+    <tr>
+        <th data-field="state" data-checkbox="true"></th>
+        <th data-field="id" data-sortable="true">编号</th>
+        <th data-field="department" data-sortable="true">科室</th>
+        <th data-field="floor" data-sortable="true">楼层</th>
+        <th data-field="room" data-sortable="true">房间</th>
+        <th data-field="num" data-sortable="true">床号</th>
+        <th data-field="type" data-sortable="true">种类</th>
+        <th data-field="empty" data-sortable="true">是否为空</th>
+    </tr>
+    </thead>
+</table>

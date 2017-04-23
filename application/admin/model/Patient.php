@@ -9,21 +9,22 @@
 namespace app\admin\model;
 
 
+use app\common\model\CommonModel;
 use think\Db;
 use think\Model;
 
-class Patient extends Model
+class Patient extends CommonModel
 {
-    private $_db = '';
-    // protected $table = 'think_admin';
-    public function __construct()
-    {
-        $this->_db = Db::table('hms_patient');
-        // $this->name = 'admin';
-    }
+    // private $_db = '';
+    // // protected $table = 'think_admin';
+    // public function __construct()
+    // {
+    //     //$this->_db = Db::table('hms_patient');
+    //     // $this->name = 'admin';
+    // }
 
     public function getPatientByUser($userid){
-        $ret = $this->_db->where('user_id',$userid)->find();
+        $ret = $this->where('id',$userid)->find()->getData();
         return $ret;
     }
 }

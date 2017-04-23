@@ -6,22 +6,37 @@
 		<button class="btn btn-default">删除</button>
 	</div>
 </div>
-<table class="table">
-	<thead>
-	<th>编号</th>
-	<th>名称</th>
-	<th>电话</th>
-	</thead>
-	<tbody>
-	<tr>
-		<td>1</td>
-		<td>admin</td>
-		<td>123</td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>abc</td>
-		<td>321</td>
-	</tr>
-	</tbody>
+<div id="toolbar">
+    <button id="button" class="btn btn-default">getSelections</button>
+</div>
+<table id="table"
+		data-method="post" 
+	   data-data-type="json" 
+	   data-toggle="table" 
+       data-toolbar="#toolbar"
+       data-height="460"
+       data-click-to-select="true"
+       data-url="{:url('admin/bed/getEmptyList')}">
+    <thead>
+    <tr>
+		<th data-field="state" data-checkbox="true"></th>
+		<th data-field="id" data-sortable="true">编号</th>
+		<th data-field="department" data-sortable="true">科室</th>
+		<th data-field="floor" data-sortable="true">楼层</th>
+		<th data-field="room" data-sortable="true">房间</th>
+		<th data-field="num" data-sortable="true">床号</th>
+		<th data-field="type" data-sortable="true">种类</th>
+		<th data-field="empty" data-sortable="true">是否为空</th>
+    </tr>
+    </thead>
 </table>
+
+<script type="text/javascript">
+	var $table = $('#table'),
+		$button = $('#button');
+	$(function () {
+        $button.click(function () {
+            alert('getSelections: ' + JSON.stringify($table.bootstrapTable('getSelections')));
+        });
+    });
+</script>
