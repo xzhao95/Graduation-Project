@@ -27,4 +27,12 @@ class Patient extends CommonModel
         $ret = $this->where('id',$userid)->find()->getData();
         return $ret;
     }
+
+    public function getIsInHospitalAttr($value)
+    {
+        $isInHospital = [1 => '已住院', 0 => ' '];
+        return $isInHospital[$value];
+    }
+
+
 }

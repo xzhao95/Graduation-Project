@@ -8,6 +8,7 @@
 
 namespace app\admin\controller;
 use app\admin\model;
+use app\admin\model\Bed as ModelBed;
 
 class Bed extends CommonController
 {
@@ -16,7 +17,7 @@ class Bed extends CommonController
      */
     public function getEmptyList()
     {
-        $allbed = model\Bed::all(['empty'=>1]);
+        $allbed =  ModelBed::all(['empty'=>1]);
         $bedlist = array();
         foreach ($allbed as $bed) {
             $bed->department = $bed->department->name;;
@@ -33,15 +34,11 @@ class Bed extends CommonController
      */
     public function getList()
     {
-        $allbed = model\Bed::all();
-        $bedlist = array();
+        $allbed =  ModelBed::all();
         foreach ($allbed as $bed) {
             $bed->department = $bed->department->name;;
             $bed->type = $bed->type->cname;
         }
-        $result["total"] = count($allbed);
-        //获取的记录
-        $result["rows"] = $allbed;
         return $allbed;
     }
 

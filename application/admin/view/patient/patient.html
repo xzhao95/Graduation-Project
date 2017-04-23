@@ -1,0 +1,33 @@
+<!-- 表格操作 -->
+<div class="table-toolbar" id="toolbar">
+    <div class="btn-group">
+        <button class="btn btn-default">添加</button>
+        <button class="btn btn-default">删除</button>
+    </div>
+</div>
+<table id="table"
+       data-method="post"
+       data-data-type="json"
+       data-toggle="table"
+       data-toolbar="#toolbar"
+       data-height="460"
+       data-click-to-select="true"
+       data-search="true"
+       data-search-on-enter-key="true"
+       data-show-columns="true"
+       data-show-refresh="true"
+       data-url="{:url('admin/patient/getList')}">
+    <thead>
+    <tr>
+        <th data-field="state" data-checkbox="true"></th>
+        <th data-field="id" data-sortable="true">编号</th>
+        <th data-field="name" data-sortable="true">姓名</th>
+        <th data-field="citizen_ID_number" data-sortable="true">身份证号</th>
+        <th data-field="sex" data-sortable="true">性别</th>
+        <th data-field="age" data-sortable="true">年龄</th>
+        <th data-field="tel" data-sortable="true">手机</th>
+        <th data-field="address" data-sortable="true">地址</th>
+        <th data-field="isInHospital" data-sortable="true">是否住院</th>
+    </tr>
+    </thead>
+</table>
