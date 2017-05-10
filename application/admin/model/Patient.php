@@ -34,5 +34,12 @@ class Patient extends CommonModel
         return $isInHospital[$value];
     }
 
+    public function checkin(){
+        return $this->hasOne("Checkin");
+    }
+
+    public function bed(){
+        return $this->hasOne("Bed");
+    }
 
 }

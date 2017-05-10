@@ -1,0 +1,47 @@
+{__NOLAYOUT__}
+{include file="./layoutitem/header"}
+<body>
+	<!-- 床位基本信息 -->
+	<div>
+		<table class="table table-bordered">
+			<caption>床位基本信息</caption>
+			<tr>
+				<td>床位号码</td>
+				<td>{$bed.id}</td>
+				<td>房间号码</td>
+				<td>{$bed.room}</td>
+				<td>床位号</td>
+				<td>{$bed.num}</td>
+			</tr>
+			<tr>
+				<td>床位科室</td>
+				<td>{$bed.department.name}</td>
+				<td>类别</td>
+				<td>{$bed.type.cname}</td>
+				<td>费用</td>
+				<td>{$bed.type.price}</td>
+			</tr>
+		</table>
+	</div>
+	<!-- 可分配的病人 -->
+	<caption>可分配床位的病人</caption>
+	<table id="table" 
+	       data-method="post"
+	       data-data-type="json"
+	       data-toggle="table"
+	       data-toolbar="#toolbar"
+	       data-height="460"
+	       data-click-to-select="true"
+	       data-url="{:url('admin/checkin/getNoBedCheckin')}">
+	    <thead>	    
+	    <tr>
+	        <th data-field="state" data-checkbox="true"></th>
+	        <th data-field="id" data-sortable="true">住院号码</th>
+	        <th data-field="patient.name" data-sortable="true">姓名</th>
+	        <th data-field="patient.sex" data-sortable="true">性别</th>
+	        <th data-field="department.name" data-sortable="true">科室</th>
+	        <th data-field="checkin_time" data-sortable="true">入院时间</th>
+	    </tr>
+	    </thead>
+	</table>
+</body>

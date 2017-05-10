@@ -54,7 +54,9 @@ class Checkin extends CommonController
         $patientData = array();
         $contactData = array("patient_id" => $patientid);
         $checkinData = array("patient_id" => $patientid);
+        $beditem = null;
         foreach($_POST as $x => $x_value){
+            if(!$x_value) continue;
             if(startsWith($x,"patient_")){
                 $name = substr($x,8);
                 if($name == "sex"){
@@ -69,8 +71,8 @@ class Checkin extends CommonController
             else{
                 if($x == "bed_id"){
                     $bed = explode("-",$x_value);
-                    $bedid = Bed::get(['floor' => $bed[0],'room' => $bed[1],'num' => $bed[2]])->id;
-                    $x_value = $bedid;
+                    $beditem = Bed::get(['floor' => $bed[0],'room' => $bed[1],'num' => $bed[2]]);
+                    continue;
                 }
                 if($x == "department_id"){
                     $departmentid = Department::get(["name" => $x_value])->id;
@@ -85,7 +87,24 @@ class Checkin extends CommonController
         $patientContact->allowField(true)->save($contactData,["patient_id" => $patientid]);
         $checkin = new ModelCheckin($checkinData);
         $checkin->allowField(true)->save();
+        if($beditem){
+            $beditem->checkin_id = $checkin->id;
+            $beditem.save();
+        }
         return show(1,"登记成功");
+    }
+
+    public function getNoBedCheckin(){
+        $list = ModelCheckin::all();
+        $result = array();
+        foreach ($list as $item){
+            if($item->bed == null){
+                $item->patient = $item->patient;
+                $item->department = $item->department;
+                array_push($result,$item);
+            }
+        }
+        return $result;
     }
 
 }

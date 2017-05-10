@@ -1,8 +1,12 @@
 <!-- 表格操作 -->
-<div class="table-toolbar" id="toolbar">
+<div id="toolbar">
     <div class="btn-group">
         <button class="btn btn-default">添加</button>
         <button class="btn btn-default">删除</button>
+        <button class="btn btn-default" onclick="distributionBed()">分配</button>
+        <button class="btn btn-default" onclick="contractBed()">包床</button>
+        <button class="btn btn-default" onclick="turnBed()">转床</button>
+        <button class="btn btn-default" onclick="returnBed()">退床</button>
     </div>
 </div>
 <table id="table"
@@ -21,12 +25,19 @@
     <tr>
         <th data-field="state" data-checkbox="true"></th>
         <th data-field="id" data-sortable="true">编号</th>
-        <th data-field="department" data-sortable="true">科室</th>
+        <th data-field="department.name" data-sortable="true">科室</th>
         <th data-field="floor" data-sortable="true">楼层</th>
         <th data-field="room" data-sortable="true">房间</th>
         <th data-field="num" data-sortable="true">床号</th>
-        <th data-field="type" data-sortable="true">种类</th>
-        <th data-field="empty" data-sortable="true">是否为空</th>
+        <th data-field="type.cname" data-sortable="true">种类</th>
+        <th data-field="checkin_id" data-sortable="true">住院号码</th>
+        <th data-field="checkin.patient.name" data-sortable="true">姓名</th>
+        <th data-field="checkin.patient.sex" data-sortable="true">性别</th>
+        <th data-field="checkin.department.name" data-sortable="true">病人科室</th>
     </tr>
     </thead>
 </table>
+
+<script type="text/javascript">
+   var $table = $('#table');
+</script>

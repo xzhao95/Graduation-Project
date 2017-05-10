@@ -27,5 +27,10 @@ class Bed extends CommonModel
         $empty = [1 => '有空', 0 => '已满'];
         return $empty[$value];
     }
+
+    public function checkin()
+    {
+        return $this->belongsTo("Checkin","checkin_id");
+    }
 }
    

@@ -1,0 +1,49 @@
+{__NOLAYOUT__}
+{include file="./layoutitem/header"}
+<body>
+	<!-- 床位基本信息 -->
+	<div>
+		<table class="table table-bordered">
+			<caption>待包床病人信息</caption>
+			<tr>
+				<td>住院号码</td>
+				<td>{$bed.checkin.id}</td>
+				<td>病人姓名</td>
+				<td>{$bed.checkin.patient.name}</td>
+				<td>病人性别</td>
+				<td>{$bed.checkin.patient.sex}</td>
+			</tr>
+			<tr>
+				<td>病人科室</td>
+				<td>{$bed.checkin.department.name}</td>
+				<td>病人床号</td>
+				<td>{$bed.id}</td>
+				<td>入院日期</td>
+				<td>{$bed.checkin.checkin_time}</td>
+			</tr>
+		</table>
+	</div>
+	<!-- 可包床位 -->
+	<caption>可包床位</caption>
+	<table id="table" 
+	       data-method="post"
+	       data-data-type="json"
+	       data-toggle="table"
+	       data-toolbar="#toolbar"
+	       data-height="460"
+	       data-click-to-select="true"
+	       data-url="{:url('admin/bed/getNoCheckinBed')}">
+	    <thead>	    
+	    <tr>
+	        <th data-field="state" data-checkbox="true"></th>
+	        <th data-field="id" data-sortable="true">床位号</th>
+	        <th data-field="floor" data-sortable="true">楼层</th>
+	        <th data-field="room" data-sortable="true">房间号</th>
+	        <th data-field="num" data-sortable="true">床位号</th>
+	        <th data-field="department.name" data-sortable="true">床位科室</th>
+	        <th data-field="type.cname" data-sortable="true">床位类型</th>
+	        <th data-field="type.price" data-sortable="true">床位费用</th>
+	    </tr>
+	    </thead>
+	</table>
+</body>
