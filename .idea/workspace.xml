@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="070c80a0-0fc6-40a3-8ac6-535999474166" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/admin/controller/Leave.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/admin/model/ChargeDetails.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/admin/model/Leave.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/admin/model/PaymentType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/admin/model/User.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/admin/view/leave/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/admin/view/patient/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/controller/Checkin.php" afterPath="$PROJECT_DIR$/application/admin/controller/Checkin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/controller/Patient.php" afterPath="$PROJECT_DIR$/application/admin/controller/Patient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/model/Patient.php" afterPath="$PROJECT_DIR$/application/admin/model/Patient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/checkin/checkin.html" afterPath="$PROJECT_DIR$/application/admin/view/checkin/checkin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/layoutitem/sidebar.html" afterPath="$PROJECT_DIR$/application/admin/view/layoutitem/sidebar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/patient/patient.html" afterPath="$PROJECT_DIR$/application/admin/view/patient/patient.html" />
-    </list>
+    <list default="true" id="070c80a0-0fc6-40a3-8ac6-535999474166" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -637,7 +622,7 @@
       <workItem from="1494423132765" duration="9011000" />
       <workItem from="1494511576392" duration="5846000" />
       <workItem from="1494606733385" duration="5033000" />
-      <workItem from="1494640388401" duration="2279000" />
+      <workItem from="1494640388401" duration="2366000" />
     </task>
     <task id="LOCAL-00001" summary="更改了用户退出">
       <created>1491791186721</created>
@@ -674,11 +659,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494424067775</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="5.13">
+      <created>1494646530422</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1494646530422</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118445000" />
+    <option name="totallyTimeSpent" value="118532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
@@ -733,7 +725,8 @@
     <MESSAGE value="更新了入院登记" />
     <MESSAGE value="添加了病人管理" />
     <MESSAGE value="5.10" />
-    <option name="LAST_COMMIT_MESSAGE" value="5.10" />
+    <MESSAGE value="5.13" />
+    <option name="LAST_COMMIT_MESSAGE" value="5.13" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1053,6 +1046,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="128" column="22" lean-forward="false" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
