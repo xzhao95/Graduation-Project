@@ -1,8 +1,11 @@
 <!-- 表格操作 -->
-<div class="table-toolbar" id="toolbar">
+<div id="toolbar">
     <div class="btn-group">
-        <button class="btn btn-default">添加</button>
-        <button class="btn btn-default">删除</button>
+        <button class="btn btn-default" onclick="edit('add')">添加</button>
+        <button class="btn btn-default" onclick="deletepatient()">删除</button>
+        <button class="btn btn-default" onclick="edit('edit')">编辑</button>
+        <button class="btn btn-default" onclick="checkin()">住院登记</button>
+        <button class="btn btn-default" onclick="leave()">出院结算</button>
     </div>
 </div>
 <table id="table"
@@ -31,3 +34,11 @@
     </tr>
     </thead>
 </table>
+<script>
+    var $table = $('#table');
+    var SCOPE = {
+        'checkin_url' : '/admin/checkin/index',
+        'leave_url' : '/admin/leave/index'
+    }
+</script>
+<script  type="text/javascript" src="/static/js/patientJs.js"></script>

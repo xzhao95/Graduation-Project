@@ -31,13 +31,16 @@ class Checkin extends CommonController
         if(!trim($patientid)){
             return show(0,"病人号码不能为空");
         }
-        $patient = new Patient();
-        $ret = $patient->getPatientByUser($patientid);;
-        $contact = new PatientContact();
-        $ret["contact"] = $contact->getMessageByPatid($patientid);
-        if($ret == null || !is_array($ret))
+        $patient = Patient::get($patientid);
+        if($patient->isInHospital != "")
+            return show(0,"该病患已办理入院");
+        //print_r($patient);
+        $ret = $patient;
+        if($ret == null )
             return show(0,"未查询到该病人");
-        //print_r($ret);
+        $contact = $patient->contact;
+        $ret["contact"] = $contact;
+
         return show(1,"查询成功",$ret);
     }
 
@@ -81,6 +84,7 @@ class Checkin extends CommonController
                 $checkinData[$x] = $x_value;
             }
         }
+        $checkinData['checkin_time'] = date("Y-m-d H:i:s");
         $patient = new Patient;
         $patient->allowField(true)->save($patientData,["id" => $patientid]);
         $patientContact = new PatientContact;

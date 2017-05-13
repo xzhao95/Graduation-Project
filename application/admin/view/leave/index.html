@@ -1,0 +1,100 @@
+<form id="form" class="form-horizontal">
+    <!-- 病患号码 -->
+    <div class="row">
+        <div class="form-group col-sm-5" >
+            <label class="col-sm-3 control-label">住院号码</label>
+            <div class="col-sm-9">
+                <input type="text" name="checkin_id" id="checkin_id" class="form-control">
+            </div>
+
+        </div>
+        <div class="form-group col-sm-6" >
+            <button type="button" class="btn btn-defaule" id="getpatientmes" onclick="leaveObj.getMessage()">获取费用清单</button>
+        </div>
+    </div>
+    <!-- 费用清单 -->
+    <div >
+        <table class="table table-bordered"  >
+            <caption>费用清单</caption>
+            <tr>
+                <th>费用名称</th>
+                <th>费用金额</th>
+                <th>费用名称</th>
+                <th>费用金额</th>
+            </tr>
+            <tr>
+                <td>床位费</td>
+                <td name="bed_cost">0</td>
+                <td>治疗费</td>
+                <td name="treatment_cost">0</td>
+            </tr>
+            <tr>
+                <td>药品费</td>
+                <td name="medicine_cost">0</td>
+                <td>手术费</td>
+                <td name="operation_cost">0</td>
+            </tr>
+            <tr>
+                <td>伙食费</td>
+                <td name="food_cost">0</td>
+                <td>检查费</td>
+                <td name="examination_cost">0</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>合计</td>
+                <td name="total_amount">0</td>
+            </tr>
+        </table>
+    </div>
+    <div >
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label class="col-sm-2 control-label">付款类型</label>
+                <div class="col-sm-5">
+                    <select class="form-control" name="payment_type">
+                        {volist name="paymentType" id="pay"}
+                        <option>{$pay->name}</option>
+                        {/volist}
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label class="col-sm-2 control-label">收费人</label>
+                <div class="col-sm-10">
+                    <input type="text" name="charger" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">交款</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="payment" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">退找</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="retreat" class="form-control" readonly="true">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-2 control-label">结算金额</label>
+                <div class="col-sm-10">
+                    <input type="text" name="settle_accounts" class="form-control" readonly="true">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <button type="button" class="btn btn-defaule" onclick="leaveObj.settle()" >结算</button>
+    <button type="button" class="btn btn-defaule"  >出院</button>
+</form>
+
+<script type="text/javascript" src="/static/js/leaveJs.js"></script>

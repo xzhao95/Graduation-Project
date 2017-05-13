@@ -30,7 +30,7 @@ class Patient extends CommonModel
 
     public function getIsInHospitalAttr($value)
     {
-        $isInHospital = [1 => '已住院', 0 => ' '];
+        $isInHospital = [1 => '已住院', 0 => ""];
         return $isInHospital[$value];
     }
 
@@ -40,6 +40,10 @@ class Patient extends CommonModel
 
     public function bed(){
         return $this->hasOne("Bed");
+    }
+
+    public function contact(){
+        return $this->hasMany('PatientContact','patient_id');
     }
 
 }
